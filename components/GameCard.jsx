@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Image, StyleSheet, Text, View, Animated } from "react-native";
+import { Score } from "./Score";
 
 export function GameCard({ game }) {
   return (
@@ -12,7 +13,7 @@ export function GameCard({ game }) {
         <Text className="mb-1" style={styles.title}>
           {game.title}
         </Text>
-        <Text style={styles.score}>{game.score}</Text>
+        <Score score={game.score} maxScore={100} />
         <Text className="mt-2 flex-shrink-0" style={styles.description}>
           {game.description.slice(0, 100)} ...{" "}
         </Text>
